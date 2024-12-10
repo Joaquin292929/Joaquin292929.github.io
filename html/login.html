@@ -46,7 +46,8 @@
           <span class="toggle-password">Mostrar</span>
         </div>
 
-        <a href="./html/login.html" class="boton">Iniciar Sesión</a>
+        <!-- Cambia el enlace por un botón -->
+        <button type="submit" class="boton">Iniciar Sesión</button>
       </form>
 
       <a href="registro.html" class="link"
@@ -93,15 +94,18 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
+      // Manejar el evento de envío del formulario
       document
         .getElementById("loginForm")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
 
+          // Capturar los valores de los campos del formulario
           const email = document.getElementById("loginEmail").value;
           const password = document.getElementById("loginPassword").value;
 
           try {
+            // Intentar iniciar sesión con Firebase Authentication
             const userCredential = await signInWithEmailAndPassword(
               auth,
               email,
@@ -109,9 +113,13 @@
             );
             const user = userCredential.user;
 
-            alert("Inicio de sesión exitoso.");
-            // Redirigir o realizar alguna acción
+            // Inicio de sesión exitoso
+            alert("Inicio de sesión exitoso. Bienvenido, " + user.email);
+            // Aquí puedes redirigir al usuario a otra página
+            window.location.href = "../index.html";
           } catch (error) {
+            // Manejar errores de inicio de sesión
+            console.error("Error al iniciar sesión: ", error);
             alert(`Error: ${error.message}`);
           }
         });
