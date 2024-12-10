@@ -1,51 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio Sesión</title>
-    <link rel="icon" href="../imagenes/icono.png" type="image/png">
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <header>
-    <div class ="topnav">
+    <link rel="icon" href="../imagenes/icono.png" type="image/png" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="topnav">
         <menu>
-            <li><img src="../imagenes/icono.png" alt="alt" class= "img"></li>
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="descubrir.html">Descubrir</a></li>
-            <li><a href="nosotros.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
+          <li><img src="../imagenes/icono.png" alt="alt" class="img" /></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="descubrir.html">Descubrir</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </menu>
         <a href="login.html" class="sesion">Inicio Sesión</a>
-    </div>
-  </header>
+      </div>
+    </header>
     <div class="container">
-        <img src="../imagenes/icono.png" alt="">
-        <h2>Iniciar Sesión</h2>
-        <form id="loginForm">
-          <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
-    
-          <div style="position: relative;">
-            <input type="password" id="loginPassword" placeholder="Contraseña" required>
-            <span class="toggle-password">Mostrar</span>
-          </div>
-    
-          <a href="./html/login.html" class="boton">Iniciar Sesión</a>
-        </form>
-    
-        <a href="registro.html" class="link">¿No tienes una cuenta? Regístrate aquí</a>
-      </div>
-      <div class= "footer">
-        <a href="https://www.instagram.com/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><i class = "fab fa-facebook"></i></a>
-        <a href="https://x.com/?lang=es" target="_blank"><i class ="fab fa-twitter"></i></a>
-        <a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit"></i></a>
-        <br>
-        <p>Copyright Soluciones Digitales @2024<br>Todos Los Derechos Reservados.</p>
-      </div>
+      <img src="../imagenes/icono.png" alt="" />
+      <h2>Iniciar Sesión</h2>
+      <form id="loginForm">
+        <input
+          type="email"
+          id="loginEmail"
+          placeholder="Correo electrónico"
+          required
+        />
+
+        <div style="position: relative">
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Contraseña"
+            required
+          />
+          <span class="toggle-password">Mostrar</span>
+        </div>
+
+        <a href="./html/login.html" class="boton">Iniciar Sesión</a>
+      </form>
+
+      <a href="registro.html" class="link"
+        >¿No tienes una cuenta? Regístrate aquí</a
+      >
+    </div>
+    <div class="footer">
+      <a href="https://www.instagram.com/?hl=es" target="_blank"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.facebook.com/?locale=es_ES" target="_blank"
+        ><i class="fab fa-facebook"></i
+      ></a>
+      <a href="https://x.com/?lang=es" target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a href="https://www.reddit.com" target="_blank"
+        ><i class="fab fa-reddit"></i
+      ></a>
+      <br />
+      <p>
+        Copyright Soluciones Digitales @2024<br />Todos Los Derechos Reservados.
+      </p>
+    </div>
     <script src="../js/password.js"></script>
     <script type="module">
       // Import the functions you need from the SDKs you need
@@ -53,7 +78,7 @@
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
-    
+
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
@@ -63,12 +88,12 @@
         storageBucket: "formularios-65e79.firebasestorage.app",
         messagingSenderId: "8486015186",
         appId: "1:8486015186:web:87d944a9ba1483c616dd0b",
-        measurementId: "G-WP3LC7KKJV"
+        measurementId: "G-WP3LC7KKJV",
       };
-    
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
-</body>
+  </body>
 </html>
