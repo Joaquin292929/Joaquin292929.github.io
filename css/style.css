@@ -1,10 +1,12 @@
 .topnav {
   overflow: hidden;
   background-color: #333;
+  display: flex;
+  justify-content: flex-start; /* Asegura que los elementos del menú se alineen a la izquierda */
+  align-items: center; /* Centra los elementos verticalmente */
 }
 
 .topnav a {
-  float: left;
   display: flex;
   align-items: center;
   color: #f2f2f2;
@@ -19,25 +21,27 @@
 
 .topnav a img {
   width: 30px;
-  height: auto; 
+  height: auto;
   margin-right: 5px;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
-menu,
-ul {
+menu {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
+  flex-grow: 1; /* Los elementos del menú ocuparán el espacio disponible */
 }
-body{
+
+body {
   background-color: #333;
 }
+
 .content {
   background-color: #f2f2f2;
-  
 }
+
 .container {
   background-color: #f2f2f2;
   border-radius: 8%;
@@ -47,15 +51,16 @@ body{
   box-sizing: border-box;
   text-align: center;
 }
+
 .intro {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-image: url("../imagenes/alt.jpg");
   background-size: cover;
   background-position: center;
-  color: black; 
+  color: black;
   padding: 40px;
   height: 1200px;
 }
@@ -72,7 +77,6 @@ body{
   font-size: 1.5em;
 }
 
-/* Estilo para los campos de formulario */
 input {
   width: 100%;
   padding: 10px;
@@ -83,10 +87,10 @@ input {
 }
 
 .toggle-password {
-  cursor: pointer; 
-  position: absolute; 
-  right: 10px; 
-  top: 50%; 
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
   transform: translateY(-50%);
   color: #007bff;
   user-select: none;
@@ -101,17 +105,18 @@ input {
   border: none;
   border-radius: 4px;
   margin-top: 10px;
-  text-align: center; /* Centra el texto dentro del enlace */
-  display: inline-block; /* Para que el enlace se comporte como un bloque y permita ajustar el ancho */
-  text-decoration: none; /* Elimina la decoración predeterminada de los enlaces */
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .boton:hover {
-  background-color: #0056b3; /* Cambio de color al pasar el mouse */
+  background-color: #0056b3;
 }
+
 .contenedor {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin: 20px;
 }
 
@@ -120,42 +125,46 @@ input {
   color: #333;
   padding: 20px;
   margin: 10px;
-  flex: 1; 
-  max-width: 1000px; 
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+  flex: 1;
+  max-width: 1000px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
-.caja img{
+
+.caja img {
   width: 400px;
   height: 250px;
 }
+
 .recomendados {
   font-weight: bold;
   font-size: 2em;
   margin-left: 30px;
 }
+
 .texto {
   text-align: justify;
 }
+
 .objetivo {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 40px;
   margin: 50px auto;
-  background-color: white; 
+  background-color: white;
   max-width: 800px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-  border-radius: 10px; 
-  color: #333; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  color: #333;
 }
 
 .objetivo h2 {
   font-weight: bold;
   font-size: 4em;
   margin-bottom: 20px;
-  color: #333; 
+  color: #333;
 }
 
 .objetivo p {
@@ -168,10 +177,9 @@ input {
 
 .nosotros {
   background-color: #333;
-  padding: 40px 0; 
-  margin: 0; 
+  padding: 40px 0;
+  margin: 0;
 }
-
 
 .equipo {
   display: flex;
@@ -179,27 +187,25 @@ input {
   margin: 50px auto;
   padding: 20px;
   max-width: 1200px;
-  gap: 30px; 
+  gap: 30px;
 }
 
 .miembro {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 20px;
-  width: 30%; 
-  margin: 0 15px; 
+  width: 30%;
+  margin: 0 15px;
 }
 
-
 .miembro img {
-  width: 100%; 
+  width: 100%;
   height: auto;
   border-radius: 5px;
   margin-bottom: 15px;
 }
-
 
 .linkedin-link {
   display: inline-block;
@@ -217,11 +223,9 @@ input {
   transition: background-color 0.3s ease;
 }
 
-
 .linkedin-link:hover {
   background-color: #005582;
 }
-
 
 .miembro h3 {
   color: #333;
@@ -229,20 +233,18 @@ input {
   margin-bottom: 10px;
 }
 
-
 .miembro p {
   font-size: 1.2em;
   color: #555;
   margin-bottom: 10px;
 }
 
-
 .descripcion {
   font-size: 1em;
   text-align: justify;
   margin-bottom: 10px;
 }
-/* Estilo para los enlaces */
+
 .link {
   display: block;
   margin-top: 15px;
