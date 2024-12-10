@@ -20,11 +20,12 @@
           <li><img src="../imagenes/icono.png" alt="alt" class="img" /></li>
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="descubrir.html">Descubrir</a></li>
+          <li><a href="card.html">Comprar</a></li>
           <li><a href="nosotros.html">Sobre nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </menu>
         <div id="menu-buttons">
-          <a href="html/login.html" id="login-button" class="sesion"
+          <a href="login.html" id="login-button" class="btn-global sesion"
             >Inicio Sesión</a
           >
         </div>
@@ -42,7 +43,7 @@
         <label for="message">Mensaje:</label>
         <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button type="submit">Enviar</button>
+        <button type="submit" class="btn-global">Enviar</button>
       </form>
     </div>
     <div class="footer">
@@ -91,8 +92,8 @@
         if (user) {
           // Usuario autenticado
           menuButtons.innerHTML = `
-            <a href="html/estadisticas.html" class="sesion">Estadísticas</a>
-            <button id="logout-button" class="sesion">Cerrar Sesión</button>
+            <a href="estadisticas.html" class="btn-global sesion">Estadísticas</a>
+            <button id="logout-button" class="btn-global sesion">Cerrar Sesión</button>
           `;
 
           // Manejar el cierre de sesión
@@ -110,13 +111,10 @@
         } else {
           // Usuario no autenticado
           menuButtons.innerHTML = `
-            <a href="html/login.html" id="login-button" class="sesion">Inicio Sesión</a>
+            <a href="login.html" id="login-button" class="btn-global sesion">Inicio Sesión</a>
           `;
         }
       });
     </script>
-  </body>
-</html>
-
   </body>
 </html>

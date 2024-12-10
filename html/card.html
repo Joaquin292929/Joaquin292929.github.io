@@ -20,11 +20,12 @@
           <li><img src="../imagenes/icono.png" alt="alt" class="img" /></li>
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="descubrir.html">Descubrir</a></li>
+          <li><a href="card.html">Comprar</a></li>
           <li><a href="nosotros.html">Sobre nosotros</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </menu>
         <div id="menu-buttons">
-          <a href="html/login.html" id="login-button" class="sesion"
+          <a href="login.html" id="login-button" class="btn-global sesion"
             >Inicio Sesión</a
           >
         </div>
@@ -38,54 +39,19 @@
           <p class="product-description"></p>
           <span class="product-price"></span>
           <div class="product-actions">
-            <button class="like-button">Añadir a Favorito</button>
-            <button class="cart-button">Añadir al carrito</button>
+            <button class="btn-global like-button">Añadir a Favorito</button>
+            <button class="btn-global cart-button">Añadir al carrito</button>
           </div>
         </div>
       </template>
     </div>
 
     <div style="text-align: center; margin-top: 2rem">
-      <button
-        id="checkout-button"
-        style="
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          background-color: #e67e22;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        "
-      >
+      <button id="checkout-button" class="btn-global">
         Proceder a la Compra
       </button>
-      <button
-        id="view-cart-button"
-        style="
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          background-color: #3498db;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        "
-      >
-        Ver Carrito
-      </button>
-      <button
-        id="view-favorites-button"
-        style="
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          background-color: #e74c3c;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        "
-      >
+      <button id="view-cart-button" class="btn-global">Ver Carrito</button>
+      <button id="view-favorites-button" class="btn-global">
         Ver Favoritos
       </button>
     </div>
@@ -95,33 +61,20 @@
         Este sitio utiliza cookies para mejorar tu experiencia. Al continuar,
         aceptas el uso de cookies.
       </p>
-      <button id="accept-cookies">Aceptar</button>
+      <button id="accept-cookies" class="btn-global">Aceptar</button>
     </dialog>
 
     <div id="cart-container" style="display: none">
       <h2>Carrito de Compras</h2>
       <div class="cart-list"></div>
-      <button
-        id="proceed-checkout"
-        style="
-          padding: 1rem 2rem;
-          font-size: 1rem;
-          background-color: #e67e22;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        "
-      >
-        Confirmar Compra
-      </button>
-      <button id="close-cart">Cerrar Carrito</button>
+      <button id="proceed-checkout" class="btn-global">Confirmar Compra</button>
+      <button id="close-cart" class="btn-global">Cerrar Carrito</button>
     </div>
 
     <div id="favorites-container" style="display: none">
       <h2>Favoritos</h2>
       <div class="favorites-list"></div>
-      <button id="close-favorites">Cerrar Favoritos</button>
+      <button id="close-favorites" class="btn-global">Cerrar Favoritos</button>
     </div>
     <div class="footer">
       <a href="https://www.instagram.com/?hl=es" target="_blank"
@@ -169,8 +122,8 @@
         if (user) {
           // Usuario autenticado
           menuButtons.innerHTML = `
-            <a href="html/estadisticas.html" class="sesion">Estadísticas</a>
-            <button id="logout-button" class="sesion">Cerrar Sesión</button>
+            <a href="estadisticas.html" class="btn-global sesion">Estadísticas</a>
+            <button id="logout-button" class="btn-global sesion">Cerrar Sesión</button>
           `;
 
           // Manejar el cierre de sesión
@@ -188,13 +141,10 @@
         } else {
           // Usuario no autenticado
           menuButtons.innerHTML = `
-            <a href="html/login.html" id="login-button" class="sesion">Inicio Sesión</a>
+            <a href="login.html" id="login-button" class="btn-global sesion">Inicio Sesión</a>
           `;
         }
       });
     </script>
   </body>
-</html>
-
-    </body>
 </html>

@@ -3,32 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nosotros</title>
+    <title>Soluciones Digitales</title>
     <link rel="icon" href="../imagenes/icono.png" type="image/png" />
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/contacto.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="../js/map.js" defer></script>
-    <style>
-      .map-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 400px;
-        width: 100%;
-        margin: 20px 0;
-      }
-
-      #map {
-        width: 62%;
-        height: 100%;
-      }
-    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/grafica.js" defer></script>
   </head>
   <body>
     <header>
@@ -42,74 +27,14 @@
           <li><a href="contacto.html">Contacto</a></li>
         </menu>
         <div id="menu-buttons">
-          <a href="login.html" id="login-button" class="btn-global sesion"
-            >Inicio Sesión</a
-          >
+          <!-- Aquí se cargará el botón dinámico -->
         </div>
       </div>
     </header>
-    <div class="content">
-      <div class="nosotros">
-        <div class="objetivo">
-          <h2>Nuestro objetivo</h2>
-          <p class="texto">
-            Proporcionar soluciones digitales innovadoras y personalizadas que
-            optimicen los procesos empresariales, impulsen la transformación
-            digital y aumenten la competitividad de nuestros clientes en un
-            entorno tecnológico en constante evolución, garantizando la calidad,
-            eficiencia y seguridad en cada proyecto.
-          </p>
-        </div>
-        <div class="map-container">
-          <div id="map"></div>
-        </div>
-        <div class="equipo">
-          <div class="miembro">
-            <h3>Desarrollador Full Stack</h3>
-            <p>Zhetian Dong</p>
-            <img src="../imagenes/zhe.jpg" alt="Foto del miembro" />
-            <p class="descripcion">
-              Especialista en desarrollo de aplicaciones web y móviles, con
-              experiencia en tecnologías front-end y back-end.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/zhetian-dong-85b2ba298/"
-              class="linkedin-link"
-              target="_blank"
-              >Ir a LinkedIn</a
-            >
-          </div>
-          <div class="miembro">
-            <h3>Arquitecto de Soluciones</h3>
-            <p>Joaquín Fernández Ortega</p>
-            <img src="../imagenes/yo.jpg" alt="Foto del miembro" />
-            <p class="descripcion">
-              Diseño de arquitecturas escalables para la transformación digital
-              de empresas y CEO.
-            </p>
-            <a
-              href="https://linkedin.com/in/marialopez"
-              class="linkedin-link"
-              target="_blank"
-              >Ir a LinkedIn</a
-            >
-          </div>
-          <div class="miembro">
-            <h3>Analista de Datos</h3>
-            <p>Jose Antonio Hernández Hernández</p>
-            <img src="../imagenes/alt.jpeg" alt="Foto del miembro" />
-            <p class="descripcion">
-              Análisis de datos para la optimización de procesos empresariales
-              mediante el uso de herramientas de Big Data.
-            </p>
-            <a
-              href="https://www.linkedin.com/in/jose-antonio-hern%C3%A1ndez-hern%C3%A1ndez-16175422b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-              class="linkedin-link"
-              target="_blank"
-              >Ir a LinkedIn</a
-            >
-          </div>
-        </div>
+    <div class="content-graf">
+      <h2>Cantidad de inicios de sesión durante el último mes</h2>
+      <div class="chart-container">
+        <canvas id="loginChart"></canvas>
       </div>
     </div>
     <div class="footer">
@@ -158,7 +83,7 @@
         if (user) {
           // Usuario autenticado
           menuButtons.innerHTML = `
-            <a href="estadisticas.html" class="btn-global sesion">Estadísticas</a>
+            <a href="estadisticas.html" class="sesion">Estadísticas</a>
             <button id="logout-button" class="btn-global sesion">Cerrar Sesión</button>
           `;
 
@@ -177,7 +102,7 @@
         } else {
           // Usuario no autenticado
           menuButtons.innerHTML = `
-            <a href="login.html" id="login-button" class="btn-global sesion">Inicio Sesión</a>
+            <a href="html/login.html" id="login-button" class="sesion btn-global">Inicio Sesión</a>
           `;
         }
       });
