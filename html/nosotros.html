@@ -11,6 +11,24 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="../js/map.js" defer></script>
+    <style>
+      .map-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      #map {
+        width: 62%;
+        height: 100%;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -37,6 +55,9 @@
             eficiencia y seguridad en cada proyecto.
           </p>
         </div>
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
         <div class="equipo">
           <div class="miembro">
             <h3>Desarrollador Full Stack</h3>
@@ -55,8 +76,8 @@
           </div>
           <div class="miembro">
             <h3>Arquitecto de Soluciones</h3>
-            <p>Joaqu&iacute;n Fern&aacute;ndez Ortega</p>
-            <img src="../imagenes/yo.jpg"Foto del miembro">
+            <p>Joaquín Fernández Ortega</p>
+            <img src="../imagenes/yo.jpg" alt="Foto del miembro" />
             <p class="descripcion">
               Diseño de arquitecturas escalables para la transformación digital
               de empresas y CEO.
@@ -70,7 +91,7 @@
           </div>
           <div class="miembro">
             <h3>Analista de Datos</h3>
-            <p>Jose Antonio Hern&aacute;ndez Hern&aacute;ndez</p>
+            <p>Jose Antonio Hernández Hernández</p>
             <img src="../imagenes/alt.jpeg" alt="Foto del miembro" />
             <p class="descripcion">
               Análisis de datos para la optimización de procesos empresariales
@@ -86,7 +107,6 @@
         </div>
       </div>
     </div>
-
     <div class="footer">
       <a href="https://www.instagram.com/?hl=es" target="_blank"
         ><i class="fab fa-instagram"></i

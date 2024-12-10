@@ -98,20 +98,21 @@
 
     <script src="../js/password.js"></script>
     <script type="module">
-      // Importar funciones necesarias desde Firebase
       import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
       import {
         getDatabase,
         ref,
-        push,
         set,
       } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-database.js";
 
-      // Tu configuración de Firebase
       const firebaseConfig = {
         apiKey: "AIzaSyDO_w8Qw5gRKQhlOV_ILYHniKKrpvyVyD8",
         authDomain: "formularios-65e79.firebaseapp.com",
-        databaseURL: "https://formularios-65e79-default-rtdb.firebaseio.com", // Asegúrate de que esta URL esté correcta
+        databaseURL: "https://formularios-65e79-default-rtdb.firebaseio.com",
         projectId: "formularios-65e79",
         storageBucket: "formularios-65e79.appspot.com",
         messagingSenderId: "8486015186",
@@ -119,66 +120,49 @@
         measurementId: "G-WP3LC7KKJV",
       };
 
-      // Inicializa Firebase
       const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
       const database = getDatabase(app);
 
-      // Cambiar el evento 'submit' del formulario a un click del enlace
       document
-        .getElementById("registrarseLink")
-        .addEventListener("click", submitForm);
+        .getElementById("registroForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-      function submitForm(e) {
-        e.preventDefault();
+          const nombre = document.getElementById("nombre").value;
+          const email = document.getElementById("email").value;
+          const fecha = document.getElementById("fecha").value;
+          const direccion = document.getElementById("direccion").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
 
-        // Obtener los valores del formulario
-        var fname = getInputVal("nombre");
-        var email = getInputVal("email");
-        var fecha = getInputVal("fecha");
-        var direccion = getInputVal("direccion");
-        var password = getInputVal("password");
+          if (password !== confirmPassword) {
+            alert("Las contraseñas no coinciden.");
+            return;
+          }
 
-        // Guardar mensaje en Firebase
-        saveMessage(fname, email, fecha, direccion, password);
+          try {
+            const userCredential = await createUserWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
 
-        // Limpiar el formulario
-        document.getElementById("registroForm").reset();
-      }
+            await set(ref(database, `usuarios/${user.uid}`), {
+              nombre: nombre,
+              email: email,
+              fecha: fecha,
+              direccion: direccion,
+            });
 
-      // Obtener los valores del formulario
-      function getInputVal(id) {
-        return document.getElementById(id).value;
-      }
-
-      // Guardar el mensaje en Firebase Realtime Database
-      function saveMessage(fname, email, fecha, direccion, password) {
-        // Referencia a la base de datos de Firebase
-        const usersRef = ref(database, "usuarios");
-
-        // Crear una nueva entrada en la base de datos
-        const newUserRef = push(usersRef);
-
-        // Establecer los datos en la base de datos
-        set(newUserRef, {
-          nombre: fname,
-          email: email,
-          fecha: fecha,
-          direccion: direccion,
-          password: password,
-        })
-          .then(() => {
-            console.log("Datos guardados exitosamente.");
-          })
-          .catch((error) => {
-            console.error("Error al guardar los datos: ", error);
-          });
-      }
-
-      // Función que ejecuta el registro
-      function ejecutar() {
-        submitForm(event);
-        location.reload(); // Recarga la página después de registrar
-      }
+            alert("Usuario registrado exitosamente.");
+            document.getElementById("registroForm").reset();
+          } catch (error) {
+            alert(`Error: ${error.message}`);
+          }
+        });
     </script>
   </body>
 </html>
