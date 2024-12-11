@@ -1,17 +1,17 @@
-/* Ajustes para el contenedor de productos */
+/* Contenedor principal configurado como una cuadrícula */
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-  gap: 1.5rem; /* Espacio entre las tarjetas */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
   padding: 2rem;
-  justify-items: center; /* Centrar las tarjetas dentro de sus celdas */
-  max-width: 65%; /* El contenedor ahora ocupará el 65% del ancho de la pantalla */
-  margin: 0 auto; /* Centramos el contenedor */
-  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  justify-items: center;
+  max-width: 65%;
+  margin: 0 auto;
+  box-sizing: border-box;
   border-radius: 15px;
 }
 
-/* Hacer que el contenedor ocupe toda la altura disponible */
+/* Configuración global del cuerpo y el HTML para un diseño flexible */
 body,
 html {
   height: 100%;
@@ -21,18 +21,19 @@ html {
   flex-direction: column;
 }
 
+/* El elemento <main> se expande para ocupar el espacio disponible */
 main {
   flex-grow: 1;
 }
 
-/* Tarjetas de producto */
+/* Estilo general para las tarjetas de producto */
 .product-card {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 1rem;
-  width: 100%; /* Asegurar que ocupen el 100% de la celda */
-  max-width: 320px; /* Limitar el ancho de cada tarjeta */
+  width: 100%;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,53 +42,53 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto hover para las tarjetas */
+/* Efecto visual cuando se pasa el ratón por encima de las tarjetas */
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen del producto */
+/* Configuración para las imágenes dentro de las tarjetas */
 .product-image {
   width: 100%;
-  height: 250px; /* Ajustamos el tamaño de la imagen */
-  object-fit: contain; /* Mantener la imagen dentro de la tarjeta sin recortarla */
+  height: 250px;
+  object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 1rem; /* Añadimos un poco de espacio debajo de la imagen */
+  margin-bottom: 1rem;
 }
 
-/* Título del producto */
+/* Estilo del título del producto */
 .product-title {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0.5rem 0;
 }
 
-/* Descripción del producto */
+/* Descripción del producto con altura fija y texto truncado */
 .product-description {
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 1rem;
-  height: 50px; /* Limitar la altura para una mejor presentación */
+  height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Precio del producto */
+/* Estilo del precio del producto */
 .product-price {
   font-size: 1.3rem;
   color: #32e622;
   margin-bottom: 1rem;
 }
 
-/* Botones de acciones */
+/* Contenedor para los botones de acciones de productos */
 .product-actions {
   display: flex;
   gap: 0.5rem;
-  justify-content: center; /* Asegurar que los botones estén centrados */
+  justify-content: center;
 }
 
-/* Estilo de los botones */
+/* Estilo general para los botones */
 button {
   padding: 0.5rem 1rem;
   border: none;
@@ -97,23 +98,24 @@ button {
   transition: background-color 0.3s ease;
 }
 
+/* Efecto visual al pasar el ratón por encima de los botones */
 button:hover {
   opacity: 0.8;
 }
 
-/* Estilo para el botón de "Añadir a Favorito" */
+/* Botón de "Añadir a Favorito" */
 .like-button {
   background-color: #f31800;
   color: white;
 }
 
-/* Estilo para el botón de "Añadir al Carrito" */
+/* Botón de "Añadir al Carrito" */
 .cart-button {
   background-color: #50db34;
   color: white;
 }
 
-/* Botones adicionales (carrito, favoritos) */
+/* Botones adicionales como carrito, favoritos y checkout */
 #checkout-button,
 #view-cart-button,
 #view-favorites-button {
@@ -143,7 +145,7 @@ button:hover {
   color: white;
 }
 
-/* Estilo de los contenedores de carrito y favoritos */
+/* Contenedores para carrito y favoritos */
 #cart-container,
 #favorites-container {
   display: none;
@@ -163,7 +165,7 @@ button:hover {
   overflow-y: auto;
 }
 
-/* Estilos de las listas de carrito y favoritos */
+/* Listas de artículos en carrito y favoritos */
 .cart-list,
 .favorites-list {
   margin-top: 1rem;
@@ -196,12 +198,13 @@ button:hover {
   cursor: pointer;
 }
 
+/* Efecto hover para los botones de cierre */
 #close-cart:hover,
 #close-favorites:hover {
   background-color: #bbb;
 }
 
-/* Estilo del diálogo de cookies */
+/* Diálogo de cookies */
 #cookie-dialog {
   border: none;
   border-radius: 10px;
@@ -215,7 +218,7 @@ button:hover {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para el botón de aceptar cookies */
+/* Botón para aceptar cookies */
 #accept-cookies {
   padding: 0.5rem 1.5rem;
   background-color: #e67e22;

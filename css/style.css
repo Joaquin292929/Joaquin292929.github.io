@@ -1,9 +1,10 @@
+/* Barra de navegación superior */
 .topnav {
   overflow: hidden;
   background-color: #333;
   display: flex;
-  justify-content: flex-start; /* Asegura que los elementos del menú se alineen a la izquierda */
-  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .topnav a {
@@ -18,29 +19,6 @@
 .topnav a:hover {
   color: #ddd;
 }
-.btn-global {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff; /* Color azul principal */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-global:hover {
-  background-color: #0056b3; /* Azul más oscuro en hover */
-  transform: scale(1.05); /* Efecto de crecimiento */
-}
-
-.sesion {
-  margin-left: 10px;
-}
 
 .topnav a img {
   width: 30px;
@@ -49,22 +27,26 @@
   vertical-align: middle;
 }
 
+/* Menú */
 menu {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* Los elementos del menú ocuparán el espacio disponible */
+  flex-grow: 1;
 }
 
+/* Fondo de la página */
 body {
   background-color: #333;
 }
 
+/* Contenido principal */
 .content {
   background-color: #f2f2f2;
 }
 
+/* Contenedor principal */
 .container {
   background-color: #f2f2f2;
   border-radius: 8%;
@@ -75,6 +57,7 @@ body {
   text-align: center;
 }
 
+/* Introducción */
 .intro {
   display: flex;
   flex-direction: column;
@@ -100,6 +83,7 @@ body {
   font-size: 1.5em;
 }
 
+/* Campos de entrada */
 input {
   width: 100%;
   padding: 10px;
@@ -109,6 +93,7 @@ input {
   box-sizing: border-box;
 }
 
+/* Botón de alternar contraseña */
 .toggle-password {
   cursor: pointer;
   position: absolute;
@@ -120,6 +105,7 @@ input {
   z-index: 1;
 }
 
+/* Botones generales */
 .boton {
   width: 90%;
   padding: 10px;
@@ -137,12 +123,14 @@ input {
   background-color: #0056b3;
 }
 
+/* Contenedor flexible */
 .contenedor {
   display: flex;
   justify-content: center;
   margin: 20px;
 }
 
+/* Caja de contenido */
 .caja {
   background-color: #ddd;
   color: #333;
@@ -159,16 +147,19 @@ input {
   height: 250px;
 }
 
+/* Texto recomendado */
 .recomendados {
   font-weight: bold;
   font-size: 2em;
   margin-left: 30px;
 }
 
+/* Texto justificado */
 .texto {
   text-align: justify;
 }
 
+/* Objetivo */
 .objetivo {
   display: flex;
   flex-direction: column;
@@ -198,12 +189,14 @@ input {
   line-height: 1.6;
 }
 
+/* Nosotros */
 .nosotros {
   background-color: #333;
   padding: 40px 0;
   margin: 0;
 }
 
+/* Equipo */
 .equipo {
   display: flex;
   justify-content: space-around;
@@ -213,6 +206,7 @@ input {
   gap: 30px;
 }
 
+/* Miembro del equipo */
 .miembro {
   background-color: white;
   border-radius: 10px;
@@ -230,6 +224,7 @@ input {
   margin-bottom: 15px;
 }
 
+/* Enlace de LinkedIn */
 .linkedin-link {
   display: inline-block;
   background-color: #0077b5;
@@ -262,12 +257,14 @@ input {
   margin-bottom: 10px;
 }
 
+/* Descripción */
 .descripcion {
   font-size: 1em;
   text-align: justify;
   margin-bottom: 10px;
 }
 
+/* Enlaces */
 .link {
   display: block;
   margin-top: 15px;
@@ -279,6 +276,7 @@ input {
   text-decoration: underline;
 }
 
+/* Pie de página */
 .footer {
   text-align: center;
   background-color: #333;
