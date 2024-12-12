@@ -143,21 +143,19 @@
             <a href="estadisticas.html" class="btn-global sesion">Estadísticas</a>
             <button id="logout-button" class="btn-global sesion">Cerrar Sesión</button>
           `;
-
-          // Manejar el cierre de sesión
+          
           document
             .getElementById("logout-button")
             .addEventListener("click", async () => {
               try {
                 await signOut(auth);
                 alert("Has cerrado sesión.");
-                location.reload(); // Recargar para actualizar el menú
+                location.reload();
               } catch (error) {
                 console.error("Error al cerrar sesión:", error);
               }
             });
         } else {
-          // Usuario no autenticado
           menuButtons.innerHTML = `
             <a href="login.html" id="login-button" class="btn-global sesion">Inicio Sesión</a>
           `;

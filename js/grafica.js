@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
           5, 8, 12, 15, 20, 18, 22, 25, 30, 28, 24, 35, 40, 42, 38, 50, 55, 60,
           62, 65,
         ],
-        backgroundColor: "rgba(75, 192, 192, 0.5)", // Color de las barras
-        borderColor: "rgba(75, 192, 192, 1)", // Color del borde
-        borderWidth: 1, // Grosor del borde
+        backgroundColor: "rgba(75, 192, 192, 0.5)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
       },
     ],
   };
